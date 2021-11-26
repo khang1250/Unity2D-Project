@@ -76,11 +76,18 @@ public class MenuManager : MonoBehaviour
         statHp.text = playerStats.health.ToString();
     }
 
-    private void UpdateItemsInventory()
+    public void UpdateItemsInventory()
     {
+        foreach(Transform itemSlot in itemSlotContainerParent)
+        {
+            Destroy(itemSlot.gameObject);
+        }
        foreach(ItemManager item in InventoryManager.instance.GetItemList())
         {
             RectTransform itemSlot = Instantiate(itemSlotContainer, itemSlotContainerParent).GetComponent<RectTransform>();
+
+            Image itemImage = itemSlot.Find("item image").GetComponent<Image>();
+            itemImage.sprite = item.itemImage;
         } 
     }
 }
