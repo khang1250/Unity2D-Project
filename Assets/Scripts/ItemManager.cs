@@ -17,6 +17,9 @@ public class ItemManager : MonoBehaviour
 
     public int weaponStrenght;
     public int armorVitality;
+
+    public bool isStackable;
+    public int amount;
     void Start()
     {
         
@@ -37,6 +40,7 @@ public class ItemManager : MonoBehaviour
     }
     public void SelfDestroy()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        
     }
 }

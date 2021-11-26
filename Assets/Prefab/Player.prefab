@@ -105,8 +105,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2050c1e5c9d404743b1ea2fb9b591535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  characterImage: {fileID: 4723107735738678597, guid: f716cf756c9170d4f8f03855d53ed073, type: 3}
+  maxHealth: 150
   health: 0
+  currentExp: 0
+  totalExp: 0
   direction: 0
   canTakeDamage: 1
   healthUI: {fileID: 0}
@@ -156,6 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDamage: 50
   enemyLayer: 0
+  bossLayer: 0
 --- !u!61 &1760713355303905397
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -199,7 +203,6 @@ GameObject:
   - component: {fileID: 1760713355565706468}
   - component: {fileID: 1760713355565706471}
   - component: {fileID: 1760713355565706470}
-  - component: {fileID: 2830274195518910538}
   - component: {fileID: 1981616552}
   m_Layer: 10
   m_Name: Player
@@ -351,6 +354,7 @@ MonoBehaviour:
   slideInput: 0
   valueY: 0
   climbInput: 0
+  menuInput: 0
   LvlUpInput: 0
 --- !u!114 &1760713355565706468
 MonoBehaviour:
@@ -408,25 +412,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 0}
   soulNumber: 0
---- !u!114 &2830274195518910538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760713355565706465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 936de459deeced445a80eb44693aa12d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 1
-  currentExp: 0
-  baseExp: 100
-  expToLevel: 100
-  expIncrease: 1.7
-  totalExp: 0
-  expUI: {fileID: 0}
 --- !u!114 &1981616552
 MonoBehaviour:
   m_ObjectHideFlags: 0

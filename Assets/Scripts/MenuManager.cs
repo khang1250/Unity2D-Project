@@ -24,6 +24,10 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject itemSlotContainer;
     [SerializeField] Transform itemSlotContainerParent;
 
+    public TextMeshProUGUI itemName, itemDescription;
+
+    public ItemManager activeItem;
+
 
     private void Awake()
     {
@@ -42,7 +46,7 @@ public class MenuManager : MonoBehaviour
             if (menu.activeInHierarchy)
             {
                 menu.SetActive(false);
-                UpdateStats();
+    
 
             }
             else
@@ -52,19 +56,19 @@ public class MenuManager : MonoBehaviour
         }
     }
     
-    public void UpdateStats()
-    {
-        playerStats = GameManager.instance.GetPlayerStats();
-        expControl = GameManager.instance.GetExperienceControllers();
+    //public void UpdateStats()
+    //{
+    //    playerStats = GameManager.instance.GetPlayerStats();
+    //    expControl = GameManager.instance.GetExperienceControllers();
 
 
-        characterPanel.SetActive(true);
-        hpText.text = "Hp: " + playerStats.health.ToString() + "/" + playerStats.maxHealth.ToString();
-        expText.text = "Exp: " + expControl.currentExp + "/" + expControl.expToLevel;
-        totalText.text = "Total: " + expControl.totalExp;
-        strenghtText.text = "Strenght: " + PlayerAttack.instance.attackDamage;
-        Debug.Log(hpText.text = "Hp: " + PlayerStats.instance.health + "/" + PlayerStats.instance.maxHealth);
-    }
+    //    characterPanel.SetActive(true);
+    //    hpText.text = "Hp: " + playerStats.health.ToString() + "/" + playerStats.maxHealth.ToString();
+    //    expText.text = "Exp: " + expControl.currentExp + "/" + expControl.expToLevel;
+    //    totalText.text = "Total: " + expControl.totalExp;
+    //    strenghtText.text = "Strenght: " + PlayerAttack.instance.attackDamage;
+    //    Debug.Log(hpText.text = "Hp: " + PlayerStats.instance.health + "/" + PlayerStats.instance.maxHealth);
+    //}
 
     public void QuitGame()
     {
@@ -82,12 +86,26 @@ public class MenuManager : MonoBehaviour
         {
             Destroy(itemSlot.gameObject);
         }
-       foreach(ItemManager item in InventoryManager.instance.GetItemList())
+        foreach(ItemManager item in InventoryManager.instance.GetItemList())
         {
             RectTransform itemSlot = Instantiate(itemSlotContainer, itemSlotContainerParent).GetComponent<RectTransform>();
 
             Image itemImage = itemSlot.Find("item image").GetComponent<Image>();
             itemImage.sprite = item.itemImage;
+
+            Text itemsAmountText = itemSlot.Find("AmountText").GetComponent<Text>();
+            if (item.amount > 0)
+                itemsAmountText.text = item.amount.ToString();
+            else
+                itemsAmountText.text = " ";
+
+            itemSlot.GetComponent<ItemButton>().itemOnButton = item;
         } 
+    }
+
+    public void DiscardItem()
+    {
+        print(activeItem.itemName);
+        
     }
 }
