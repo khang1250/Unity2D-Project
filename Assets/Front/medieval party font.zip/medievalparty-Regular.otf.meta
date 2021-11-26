@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 2eb6615cc13563b489528be170cdff00
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - medieval party
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f314466f30971b04cbb0886997773af4, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
