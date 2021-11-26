@@ -14,8 +14,7 @@ public class PlayerStats : MonoBehaviour
 
     public int maxHealth;
     public int health;
-    public int currentExp;
-    public int totalExp;
+    
     //[SerializeField] int strenght;
     //[SerializeField] int vitality;
     //[SerializeField] int defence;
@@ -29,6 +28,14 @@ public class PlayerStats : MonoBehaviour
     private Animator anim;
 
     public Image healthUI;
+
+    public string equippedWeaponName;
+    public string equippedArmorName;
+
+    public int weaponPower;
+    public int armorVitality;
+
+    public ItemManager equipedWeapon, equipedArmor;
     
 
     public static PlayerStats instance;
@@ -134,37 +141,33 @@ public class PlayerStats : MonoBehaviour
 
     }
 
-    //public void UpdateHealthUI()
-    //{
-    //    float fillAmount = (float)health / (float)maxHealth;
-    //    healthUI.fillAmount = fillAmount;
-
-    //}
-
-    //public void AddEXP(int amountOfExpToAdd)
-    //{
-    //    currentEXP += amountOfExpToAdd;
-    //    if (currentEXP > expForNextLevel[playerLevel])
-    //    {
-    //        currentEXP -= expForNextLevel[playerLevel];
-    //        playerLevel++;
-
-    //        if (playerLevel % 2 == 0)
-    //        {
-    //            strenght++;
-    //        }
-    //        else
-    //        {
-    //            defence++;
-    //        }
-
-    //        maxHealth = Mathf.FloorToInt(maxHealth * 1.06f);
-    //        health = maxHealth;
-    //    }
-    //}
+   
 
     private void OnApplicationQuit()
     {
         //PlayerPrefs.SetFloat("HealthKey", health);
+    }
+
+    public void AddHP(int amountHpToAdd)
+    {
+        health += amountHpToAdd;
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
+    }
+
+    public void EquipWeapon(ItemManager weaponToEquip)
+    {
+        equipedWeapon = weaponToEquip;
+        weaponPower = equipedWeapon.weaponStrenght;
+
+    }
+
+    public void EquipArmor(ItemManager armorToEquip)
+    {
+        equipedArmor = armorToEquip;
+        armorVitality = equipedWeapon.armorVitality;
+
     }
 }

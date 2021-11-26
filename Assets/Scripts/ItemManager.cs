@@ -20,16 +20,32 @@ public class ItemManager : MonoBehaviour
 
     public bool isStackable;
     public int amount;
-    void Start()
+
+
+    public void UseItem()
     {
-        
+        PlayerStats knight = GameManager.instance.GetPlayerStats();
+        if(itemType == ItemType.Item)
+        {
+            if(affectType == AffectType.Hp)
+            {
+                PlayerStats.instance.AddHP(amountOfAffect);
+            }
+        }
+        else if(itemType == ItemType.Weapon)
+        {
+            InventoryManager.instance.AddItem(knight.equipedWeapon);
+            knight.EquipWeapon(this);
+        }
+        else if (itemType == ItemType.Armor)
+        {
+            InventoryManager.instance.AddItem(knight.equipedArmor);
+            knight.EquipArmor(this);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

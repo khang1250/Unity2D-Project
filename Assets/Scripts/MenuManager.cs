@@ -75,9 +75,9 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void StatsMenuUpdate()
+    public void StatsMenuUpdate(int playerSelectedNumber)
     {
-        statHp.text = playerStats.health.ToString();
+        
     }
 
     public void UpdateItemsInventory()
@@ -100,12 +100,18 @@ public class MenuManager : MonoBehaviour
                 itemsAmountText.text = " ";
 
             itemSlot.GetComponent<ItemButton>().itemOnButton = item;
-        } 
+        }
     }
 
     public void DiscardItem()
     {
-        print(activeItem.itemName);
-        
+        InventoryManager.instance.RemoveItem(activeItem);
+        UpdateItemsInventory();
+    }
+
+    public void UseItem()
+    {
+        activeItem.UseItem();
+        DiscardItem();
     }
 }
