@@ -22,12 +22,10 @@ public class ItemButton : MonoBehaviour
             {
                 ShopManager.instance.SelectedBuyItem(itemOnButton);
             }
-            if (ShopManager.instance.sellPanel.activeInHierarchy)
+            else if (ShopManager.instance.sellPanel.activeInHierarchy)
             {
                 ShopManager.instance.SelectedSellItem(itemOnButton);
-
             }
-
         }
     }
 }

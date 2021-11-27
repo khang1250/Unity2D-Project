@@ -61,7 +61,7 @@ public class ShopManager : MonoBehaviour
         sellPanel.SetActive(true);
         buyPanel.SetActive(false);
 
-        UpdateItemInShop(itemSlotSellContainerParent, InventoryManager.instance .GetItemList());
+        UpdateItemInShop(itemSlotSellContainerParent, InventoryManager.instance.GetItemList());
     }
 
     private void UpdateItemInShop(Transform itemSlotContainerParent, List<ItemManager> itemToLookFor)
@@ -103,6 +103,33 @@ public class ShopManager : MonoBehaviour
         sellItemName.text = selectedItem.itemName;
         sellItemDescription.text = selectedItem.itemDescription;
         sellItemValue.text = "Value: " + (int)(selectedItem.valueInSoul * 0.75f);
+    }
+
+    public void BuyItem()
+    {
+        if(PlayerCollectibles.instance.soulNumber >= selectedItem.valueInSoul)
+        {
+            PlayerCollectibles.instance.soulNumber -= selectedItem.valueInSoul;
+            InventoryManager.instance.AddItem(selectedItem);
+
+            currentSoulsText.text = "Souls: " + PlayerCollectibles.instance.soulNumber;
+            Debug.Log("If co chay");
+        }    
+    }
+
+    public void SellItem()
+    {
+        if (selectedItem)
+        {
+            PlayerCollectibles.instance.soulNumber += (int)(selectedItem.valueInSoul * 0.75f);
+            InventoryManager.instance.RemoveItem(selectedItem);
+
+            currentSoulsText.text = "Souls: " + PlayerCollectibles.instance.soulNumber;
+            selectedItem = null;
+
+            OpenSellPanel();
+        }    
+
     }
 
 }
