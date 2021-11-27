@@ -15,15 +15,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Casstle.unity
     guid: 9981af7f858b7c141a43f359c95940b1
   - enabled: 1
+    path: Assets/Scenes/Mountain.unity
+    guid: ad60dad33a6b5384ca2913bbaf43b50f
+  - enabled: 1
+    path: Assets/Scenes/Underground Casstle.unity
+    guid: 2ce22255c27037a4d93a55c11829e2dd
+  - enabled: 1
     path: Assets/Scenes/level2.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/level 2.5.unity
     guid: 9170739bff75d7049a8974d5bff55b4b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/level 3.unity
     guid: 036cb95806aa2f242a8c698f6f51df34
   m_configObjects: {}
