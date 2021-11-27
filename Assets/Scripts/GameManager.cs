@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     private static GameManager GM;
     private Fader fader;
 
+    public int currentSouls = PlayerCollectibles.instance.soulNumber;
+
 
 
     private void Awake()

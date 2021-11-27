@@ -6,7 +6,7 @@ using TMPro;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] GameObject menu;
+    public GameObject menu;
     private GatherInput gI;
 
     public Slider healthSlider;
@@ -67,11 +67,11 @@ public class MenuManager : MonoBehaviour
         //totalText.text = "Total: " + exppControl.totalExp;
         //strenghtText.text = "Strenght: " + PlayerAttack.instance.attackDamage;
          
-        playerStats = GameManager.instance.GetPlayerStats();
-        expControl = GameManager.instance.GetExperienceControllers();
-        hpText.text = playerStats.health.ToString() + "/" + playerStats.maxHealth.ToString();
-        expText.text = expControl.currentExp.ToString();
-        totalText.text = expControl.totalExp.ToString();  
+        //playerStats = GameManager.instance.GetPlayerStats();
+        //expControl = GameManager.instance.GetExperienceControllers();
+        //hpText.text = playerStats.health.ToString() + "/" + playerStats.maxHealth.ToString();
+        //expText.text = expControl.currentExp.ToString();
+        //totalText.text = expControl.totalExp.ToString();  
         
     }
 

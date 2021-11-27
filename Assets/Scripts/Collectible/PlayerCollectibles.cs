@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public class PlayerCollectibles : MonoBehaviour
 {
+    public static PlayerCollectibles instance;
     public Text textComponent;  
     public int soulNumber;
     
     void Start()
     {
+        instance = this;
         soulNumber = PlayerPrefs.GetInt("SoulNumber", 0);   
         UpdateText();     
     }

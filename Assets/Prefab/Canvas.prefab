@@ -443,7 +443,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2, y: 1}
+  m_AnchoredPosition: {x: 2, y: -505}
   m_SizeDelta: {x: -45.2, y: -44.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &164844990
@@ -600,6 +600,7 @@ RectTransform:
   - {fileID: 12081670}
   - {fileID: 1356603894}
   - {fileID: 976267337}
+  - {fileID: 1875048391}
   m_Father: {fileID: 1465400244}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4066,7 +4067,6 @@ RectTransform:
   m_Children:
   - {fileID: 626365662}
   - {fileID: 326771149}
-  - {fileID: 1875048391}
   m_Father: {fileID: 164844988}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4871,12 +4871,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1465400244}
-  m_RootOrder: 2
+  m_Father: {fileID: 326771149}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 357.99988, y: -133.31458}
+  m_AnchoredPosition: {x: 354.99988, y: -4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1875048393
@@ -5402,6 +5402,7 @@ GameObject:
   - component: {fileID: 1724526886510097780}
   - component: {fileID: 3515188469086737529}
   - component: {fileID: 1997090179487313343}
+  - component: {fileID: 665936595}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5528,6 +5529,33 @@ MonoBehaviour:
   itemName: {fileID: 1179769700}
   itemDescription: {fileID: 1241152163}
   activeItem: {fileID: 0}
+--- !u!114 &665936595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114869072573884001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9641dc3b947ca7449a4acbfa24af15f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopMenu: {fileID: 164844987}
+  buyPanel: {fileID: 626365661}
+  sellPanel: {fileID: 326771148}
+  currentSoulsText: {fileID: 1509886205}
+  itemForSale: []
+  itemSlotContainer: {fileID: 0}
+  itemSlotBuyContainerParent: {fileID: 0}
+  itemSlotSellContainerParent: {fileID: 0}
+  selectedItem: {fileID: 0}
+  buyItemName: {fileID: 0}
+  buyItemDescription: {fileID: 0}
+  buyItemValue: {fileID: 0}
+  sellItemName: {fileID: 0}
+  sellItemDescription: {fileID: 0}
+  sellItemValue: {fileID: 0}
 --- !u!1 &1332653028292857813
 GameObject:
   m_ObjectHideFlags: 0
