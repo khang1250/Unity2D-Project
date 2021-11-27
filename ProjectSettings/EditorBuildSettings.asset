@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Village 1.unity
     guid: 24d6759825854724bbbc137ce59efb2e
   - enabled: 1
+    path: Assets/Scenes/Casstle.unity
+    guid: 9981af7f858b7c141a43f359c95940b1
+  - enabled: 1
     path: Assets/Scenes/level2.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
