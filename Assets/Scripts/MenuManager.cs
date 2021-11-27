@@ -15,11 +15,12 @@ public class MenuManager : MonoBehaviour
 
     private PlayerStats playerStats;
     private ExperienceController expControl;
-    public TextMeshProUGUI hpText, expText, totalText, strenghtText;
+    [SerializeField] TextMeshProUGUI hpText, expText, totalText, equipedWeaponText, equipedArmorText, weaponPowerText, ArmorDefenceText;
     public Image characterImage;
     public GameObject characterPanel;
 
-    public TextMeshProUGUI statHp, statExp, statTotalExp, statStrenght;
+    [SerializeField] TextMeshProUGUI statHp, statExp, statTotalExp, statStrenght;
+    [SerializeField] GameObject statsButton;
 
     [SerializeField] GameObject itemSlotContainer;
     [SerializeField] Transform itemSlotContainerParent;
@@ -46,39 +47,45 @@ public class MenuManager : MonoBehaviour
             if (menu.activeInHierarchy)
             {
                 menu.SetActive(false);
-    
+                UpdateStats();
 
             }
             else
             {
+                
                 menu.SetActive(true);
             }
         }
     }
-    
-    //public void UpdateStats()
-    //{
-    //    playerStats = GameManager.instance.GetPlayerStats();
-    //    expControl = GameManager.instance.GetExperienceControllers();
 
+    public void UpdateStats()
+    {
 
-    //    characterPanel.SetActive(true);
-    //    hpText.text = "Hp: " + playerStats.health.ToString() + "/" + playerStats.maxHealth.ToString();
-    //    expText.text = "Exp: " + expControl.currentExp + "/" + expControl.expToLevel;
-    //    totalText.text = "Total: " + expControl.totalExp;
-    //    strenghtText.text = "Strenght: " + PlayerAttack.instance.attackDamage;
-    //    Debug.Log(hpText.text = "Hp: " + PlayerStats.instance.health + "/" + PlayerStats.instance.maxHealth);
-    //}
+        //characterPanel.SetActive(true);
+        //hText.text = "Hp: " + PlayerStats.instance.health.ToString() + "/" + PlayerStats.instance.maxHealth ;
+        //expText.text = "Exp: " + ExperienceController.instance.currentExp.ToString() + "/" + ExperienceController.instance.totalExp;
+        //totalText.text = "Total: " + exppControl.totalExp;
+        //strenghtText.text = "Strenght: " + PlayerAttack.instance.attackDamage;
+         
+        playerStats = GameManager.instance.GetPlayerStats();
+        expControl = GameManager.instance.GetExperienceControllers();
+        hpText.text = playerStats.health.ToString() + "/" + playerStats.maxHealth.ToString();
+        expText.text = expControl.currentExp.ToString();
+        totalText.text = expControl.totalExp.ToString();  
+        
+    }
+
+    public void StatMenuUpdate()
+    {
+        hpText.text = playerStats.health.ToString() + "/" + playerStats.maxHealth;
+    }
 
     public void QuitGame()
     {
         Application.Quit();
     }
 
-    public void StatsMenuUpdate(int playerSelectedNumber)
-    {
-        
-    }
+   
 
     public void UpdateItemsInventory()
     {

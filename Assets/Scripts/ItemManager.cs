@@ -24,7 +24,7 @@ public class ItemManager : MonoBehaviour
 
     public void UseItem()
     {
-        PlayerStats knight = GameManager.instance.GetPlayerStats();
+        //PlayerStats knight = GameManager.instance.GetPlayerStats();
         if(itemType == ItemType.Item)
         {
             if(affectType == AffectType.Hp)
@@ -32,15 +32,15 @@ public class ItemManager : MonoBehaviour
                 PlayerStats.instance.AddHP(amountOfAffect);
             }
         }
-        else if(itemType == ItemType.Weapon)
+        else if (itemType == ItemType.Weapon)
         {
-            InventoryManager.instance.AddItem(knight.equipedWeapon);
-            knight.EquipWeapon(this);
+            InventoryManager.instance.AddItem(PlayerStats.instance.equipedWeapon);
+            PlayerStats.instance.EquipWeapon(this);
         }
         else if (itemType == ItemType.Armor)
         {
-            InventoryManager.instance.AddItem(knight.equipedArmor);
-            knight.EquipArmor(this);
+            InventoryManager.instance.AddItem(PlayerStats.instance.equipedArmor);
+            PlayerStats.instance.EquipArmor(this);
         }
     }
 
