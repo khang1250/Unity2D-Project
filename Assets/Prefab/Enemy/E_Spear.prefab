@@ -84,6 +84,7 @@ GameObject:
   - component: {fileID: 5607454476937697033}
   - component: {fileID: 5607454476937697038}
   - component: {fileID: 5607454476937697269}
+  - component: {fileID: 8845402537416467529}
   m_Layer: 15
   m_Name: E_Spear
   m_TagString: Untagged
@@ -127,7 +128,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -238,6 +239,38 @@ MonoBehaviour:
   inRange: 0
   detectZone: {fileID: 5607454476427947386}
   triggerArea: {fileID: 5607454477719403169}
+--- !u!114 &8845402537416467529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5607454476937697039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 000000007bbbfbb22105a6401365e2911ff05ff97f6f57f807dab323ff5a446f5bf7644ea7f0260817ffbe242f6ec04f035f7517
+  m_ShapePath:
+  - {x: -0.86221695, y: 0.15702248, z: -0}
+  - {x: -0.4628601, y: -0.43266678, z: -0}
+  - {x: -0.50709724, y: -2.2242374, z: -0}
+  - {x: 0.34750748, y: -2.187502, z: -0}
+  - {x: 0.37763023, y: -0.49902153, z: -0}
+  - {x: 3.1645203, y: -0.29995728, z: -0}
+  - {x: 0.6209297, y: -0.05665779, z: -0}
+  - {x: 0.3696251, y: 1.4237366, z: -0}
+  - {x: -0.06596184, y: 1.6227989, z: -0}
+  - {x: -0.28591537, y: 1.1819592, z: -0}
+  m_ShapePathHash: -1601617779
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -346372
 --- !u!1 &5607454477270696977
 GameObject:
   m_ObjectHideFlags: 0

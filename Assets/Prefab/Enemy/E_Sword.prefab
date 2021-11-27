@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 586028977889160204}
   - component: {fileID: 586028977889160207}
   - component: {fileID: 586028977889160206}
+  - component: {fileID: 1848121956}
+  - component: {fileID: 1848121957}
+  - component: {fileID: 1848121958}
   m_Layer: 15
   m_Name: E_Sword
   m_TagString: Untagged
@@ -56,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -144,6 +147,82 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1848121956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586028977889160192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de700c3e23be3fe429aa635458c22c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  attackDistance: 2
+  moveSpeed: 2
+  damage: 0
+  timer: 2
+  leftLimit: {fileID: 0}
+  rightLimit: {fileID: 0}
+  target: {fileID: 0}
+  inRange: 0
+  detectZone: {fileID: 586028978243415684}
+  triggerArea: {fileID: 586028977911301992}
+--- !u!114 &1848121957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586028977889160192}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47fc3223728879b429ccbe88e63aa1d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  attackDistance: 2
+  moveSpeed: 2
+  damage: 0
+  timer: 2
+  leftLimit: {fileID: 0}
+  rightLimit: {fileID: 0}
+  target: {fileID: 0}
+  inRange: 0
+  detectZone: {fileID: 586028978243415684}
+  triggerArea: {fileID: 586028977911301992}
+--- !u!114 &1848121958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586028977889160192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 000000007bbbfbb22105a6401365e2911ff05ff97f6f57f807dab323ff5a446f5bf7644ea7f0260817ffbe242f6ec04f035f7517
+  m_ShapePath:
+  - {x: -2.7036266, y: -2.3006525, z: 0}
+  - {x: -2.0991602, y: -2.3070412, z: 0}
+  - {x: -0.4565134, y: -0.4453745, z: 0}
+  - {x: -0.4200101, y: -2.2340345, z: 0}
+  - {x: 0.47794437, y: -2.1546392, z: 0}
+  - {x: 0.4779439, y: 1.6186616, z: 0}
+  - {x: -0.0388875, y: 1.3266356, z: 0}
+  - {x: -0.6025262, y: 0.102173805, z: 0}
+  m_ShapePathHash: 1848146721
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -345524
 --- !u!1 &586028977911301992
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,6 +373,7 @@ GameObject:
   m_Component:
   - component: {fileID: 586028979348299609}
   - component: {fileID: 586028979348299591}
+  - component: {fileID: 1848121955}
   m_Layer: 14
   m_Name: Attack
   m_TagString: Untagged
@@ -341,3 +421,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 3.368309}
   m_EdgeRadius: 0
+--- !u!114 &1848121955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586028979348299608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db66cd7ceace3d45965a50e1331347e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  forceX: 6
+  forceY: 2
+  duration: 0.15

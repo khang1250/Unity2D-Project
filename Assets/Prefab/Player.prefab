@@ -108,11 +108,15 @@ MonoBehaviour:
   characterImage: {fileID: 4723107735738678597, guid: f716cf756c9170d4f8f03855d53ed073, type: 3}
   maxHealth: 150
   health: 0
-  currentExp: 0
-  totalExp: 0
   direction: 0
   canTakeDamage: 1
   healthUI: {fileID: 0}
+  equippedWeaponName: 
+  equippedArmorName: 
+  weaponPower: 0
+  armorVitality: 0
+  equipedWeapon: {fileID: 0}
+  equipedArmor: {fileID: 0}
 --- !u!1 &1760713355303905396
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,6 +208,7 @@ GameObject:
   - component: {fileID: 1760713355565706471}
   - component: {fileID: 1760713355565706470}
   - component: {fileID: 1981616552}
+  - component: {fileID: 1541474561}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -248,7 +253,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -431,6 +436,37 @@ MonoBehaviour:
   expIncrease: 1.7
   totalExp: 0
   expUI: {fileID: 0}
+--- !u!114 &1541474561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760713355565706465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 000000007bbbfbb22105a6401365e2911ff05ff97f6f57f807dab323ff5a446f5bf7644ea7f0260817ffbe242f6ec04f035f7517
+  m_ShapePath:
+  - {x: 0.6590309, y: -1.4048014, z: 0}
+  - {x: 0.8277626, y: -0.09386253, z: 0}
+  - {x: 0.4777527, y: 0.7998028, z: 0}
+  - {x: 0.47604752, y: 1.46875, z: 0}
+  - {x: -0.060382843, y: 1.3888149, z: 0}
+  - {x: 0.04610443, y: 0.84776497, z: 0}
+  - {x: -0.35357285, y: 0.7518425, z: 0}
+  - {x: -0.25764847, y: -0.71896744, z: 0}
+  - {x: -0.27363586, y: -1.4703588, z: 0}
+  m_ShapePathHash: 627310655
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -288976
 --- !u!1 &1760713355640815157
 GameObject:
   m_ObjectHideFlags: 0
