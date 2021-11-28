@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerMoveControls : MonoBehaviour
 {
+    public static PlayerMoveControls instance;
     public float speed;
     //public float baseSpeed;
     public float JumpForce;
@@ -55,7 +56,10 @@ public class PlayerMoveControls : MonoBehaviour
     //private float _verticalDirection;
 
 
-
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()    
     {

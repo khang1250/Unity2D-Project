@@ -60,18 +60,6 @@ public class MenuManager : MonoBehaviour
 
     public void UpdateStats()
     {
-
-        //characterPanel.SetActive(true);
-        //hText.text = "Hp: " + PlayerStats.instance.health.ToString() + "/" + PlayerStats.instance.maxHealth ;
-        //expText.text = "Exp: " + ExperienceController.instance.currentExp.ToString() + "/" + ExperienceController.instance.totalExp;
-        //totalText.text = "Total: " + exppControl.totalExp;
-        //strenghtText.text = "Strenght: " + PlayerAttack.instance.attackDamage;
-         
-        //playerStats = GameManager.instance.GetPlayerStats();
-        //expControl = GameManager.instance.GetExperienceControllers();
-        //hpText.text = playerStats.health.ToString() + "/" + playerStats.maxHealth.ToString();
-        //expText.text = expControl.currentExp.ToString();
-        //totalText.text = expControl.totalExp.ToString();  
         
     }
 
@@ -93,7 +81,7 @@ public class MenuManager : MonoBehaviour
         {
             Destroy(itemSlot.gameObject);
         }
-        foreach(ItemManager item in InventoryManager.instance.GetItemList())
+        foreach (ItemManager item in InventoryManager.instance.GetItemList())
         {
             RectTransform itemSlot = Instantiate(itemSlotContainer, itemSlotContainerParent).GetComponent<RectTransform>();
 
@@ -101,8 +89,11 @@ public class MenuManager : MonoBehaviour
             itemImage.sprite = item.itemImage;
 
             Text itemsAmountText = itemSlot.Find("AmountText").GetComponent<Text>();
-            if (item.amount > 0)
+            if (item.amount > 1)
+            {
                 itemsAmountText.text = item.amount.ToString();
+                Debug.Log(itemsAmountText.text = item.amount.ToString());
+            }
             else
                 itemsAmountText.text = " ";
 

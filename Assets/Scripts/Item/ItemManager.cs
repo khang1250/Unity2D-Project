@@ -32,16 +32,16 @@ public class ItemManager : MonoBehaviour
                 PlayerStats.instance.AddHP(amountOfAffect);
             }
         }
-        else if (itemType == ItemType.Weapon)
-        {
-            InventoryManager.instance.AddItem(PlayerStats.instance.equipedWeapon);
-            PlayerStats.instance.EquipWeapon(this);
-        }
-        else if (itemType == ItemType.Armor)
-        {
-            InventoryManager.instance.AddItem(PlayerStats.instance.equipedArmor);
-            PlayerStats.instance.EquipArmor(this);
-        }
+        //else if (itemType == ItemType.Weapon)
+        //{
+        //    InventoryManager.instance.AddItem(PlayerStats.instance.equipedWeapon);
+        //    PlayerStats.instance.EquipWeapon(this);
+        //}
+        //else if (itemType == ItemType.Armor)
+        //{
+        //    InventoryManager.instance.AddItem(PlayerStats.instance.equipedArmor);
+        //    PlayerStats.instance.EquipArmor(this);
+        //}
     }
 
 
@@ -52,6 +52,7 @@ public class ItemManager : MonoBehaviour
         {
             InventoryManager.instance.AddItem(this);
             SelfDestroy();
+            Debug.Log("add thanh cong");
         }
     }
     public void SelfDestroy()

@@ -26,20 +26,24 @@ public class Nextevel : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerStats playerStats = collision.GetComponentInChildren<PlayerStats>();
-        PlayerPrefs.SetInt("HealthKey", playerStats.health);
-        PlayerPrefs.SetInt("MaxHealthKey", playerStats.maxHealth);
+        if (collision.CompareTag("Player"))
+        {
+            PlayerStats playerStats = collision.GetComponentInChildren<PlayerStats>();
+            PlayerPrefs.SetInt("HealthKey", playerStats.health);
+            PlayerPrefs.SetInt("MaxHealthKey", playerStats.maxHealth);
 
-        ExperienceController expControl = collision.GetComponentInChildren<ExperienceController>();
-        PlayerPrefs.SetInt("ExpKey", expControl.currentExp);
-        PlayerPrefs.SetInt("MaxExpKey", expControl.totalExp);
+            ExperienceController expControl = collision.GetComponentInChildren<ExperienceController>();
+            PlayerPrefs.SetInt("ExpKey", expControl.currentExp);
+            PlayerPrefs.SetInt("MaxExpKey", expControl.totalExp);
 
-        PlayerCollectibles collectibles = collision.GetComponent<PlayerCollectibles>();
-        PlayerPrefs.SetInt("SoulNumber", collectibles.soulNumber);
+            PlayerCollectibles collectibles = collision.GetComponent<PlayerCollectibles>();
+            PlayerPrefs.SetInt("SoulNumber", collectibles.soulNumber);
 
-        //fader.SetLevel(lvlToLoad);
-        //SceneManager.LoadScene(lvlToLoad);
-        GameManager.ManagerLoadLevel(lvlToLoad);   
+            //fader.SetLevel(lvlToLoad);
+            //SceneManager.LoadScene(lvlToLoad);
+            GameManager.ManagerLoadLevel(lvlToLoad);   
+
+        }
     }
 }
   

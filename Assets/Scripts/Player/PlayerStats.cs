@@ -5,19 +5,12 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    //[SerializeField] int maxLevel = 50;
-    //[SerializeField] int playerLevel = 1;
-    //[SerializeField] int currentEXP;
-    //[SerializeField] int[] expForNextLevel;
-    //[SerializeField] int baseLevelExp = 100;
+
     [SerializeField] Sprite characterImage;
 
     public int maxHealth;
     public int health;
     
-    //[SerializeField] int strenght;
-    //[SerializeField] int vitality;
-    //[SerializeField] int defence;
 
     public float direction;
 
@@ -29,11 +22,11 @@ public class PlayerStats : MonoBehaviour
 
     public Image healthUI;
 
-    public string equippedWeaponName;
-    public string equippedArmorName;
+    //public string equippedWeaponName;
+    //public string equippedArmorName;
 
-    public int weaponPower;
-    public int armorVitality;
+    //public int weaponPower;
+    //public int armorVitality;
 
     public ItemManager equipedWeapon, equipedArmor;
     
@@ -61,36 +54,12 @@ public class PlayerStats : MonoBehaviour
         maxHealth = PlayerPrefs.GetInt("MaxHealthKey", maxHealth);
         MenuManager.instance.healthSlider.maxValue = maxHealth;
         MenuManager.instance.healthSlider.value = health;
-        
- 
-
-        //expForNextLevel = new int[maxLevel];
-        //expForNextLevel[1] = baseLevelExp;
-
-        //for (int i = 2; i < expForNextLevel.Length; i++)
-        //{
-        //    //print("we are at" + i);
-        //    expForNextLevel[i] = (int)(0.02f * i * i * i + 3.01f * i * i + 105.6f * i);
-        //}
+       
     }
 
     private void Update()
     {
-        //if (gI.LvlUpInput)
-        //{
-        //    AddEXP(100);
-        //}
-
-
     }
-
-    //private void TestLvlUp()
-    //{
-    //    if (gI.LvlUpInput)
-    //    {
-    //        AddEXP(100);
-    //    }
-    //}
 
     public void TakeDamage(float damage)
     {
@@ -157,17 +126,17 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    public void EquipWeapon(ItemManager weaponToEquip)
-    {
-        equipedWeapon = weaponToEquip;
-        weaponPower = equipedWeapon.weaponStrenght;
+    //public void EquipWeapon(ItemManager weaponToEquip)
+    //{
+    //    equipedWeapon = weaponToEquip;
+    //    weaponPower = equipedWeapon.weaponStrenght;
 
-    }
+    //}
 
-    public void EquipArmor(ItemManager armorToEquip)
-    {
-        equipedArmor = armorToEquip;
-        armorVitality = equipedWeapon.armorVitality;
+    //public void EquipArmor(ItemManager armorToEquip)
+    //{
+    //    equipedArmor = armorToEquip;
+    //    armorVitality = equipedWeapon.armorVitality;
 
-    }
+    //}
 }

@@ -78,8 +78,10 @@ public class ShopManager : MonoBehaviour
             itemImage.sprite = item.itemImage;
 
             Text itemsAmountText = itemSlot.Find("AmountText").GetComponent<Text>();
-            if (item.amount > 1)
+            if (item.amount > 0)
+            {
                 itemsAmountText.text = "";
+            }
             else
                 itemsAmountText.text = "";
 
@@ -113,7 +115,7 @@ public class ShopManager : MonoBehaviour
             InventoryManager.instance.AddItem(selectedItem);
 
             currentSoulsText.text = "Souls: " + PlayerCollectibles.instance.soulNumber;
-            Debug.Log("If co chay");
+            
         }    
     }
 
