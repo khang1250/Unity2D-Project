@@ -5,9 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class Fader : MonoBehaviour
 {
+    public static Fader instance;
+
     private Animator anim;
     private int lvlToLoad;
 
+    private void Awake()
+    {
+        instance = this;
+
+    }
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -17,9 +24,13 @@ public class Fader : MonoBehaviour
 
     public void SetLevel(int lvl)
     {
+        
         lvlToLoad = lvl;
         anim.SetTrigger("Fade");
+
     }
+
+  
 
     public void LoadSaveLevel()
     {

@@ -11,7 +11,7 @@ public class ItemManager : MonoBehaviour
     public int valueInSoul;
     public Sprite itemImage;
 
-    public enum AffectType { Hp, Mana}
+    public enum AffectType { Hp, Damage, Health}
     public int amountOfAffect;
     public AffectType affectType;
 
@@ -31,20 +31,23 @@ public class ItemManager : MonoBehaviour
             {
                 PlayerStats.instance.AddHP(amountOfAffect);
             }
+
         }
-        //else if (itemType == ItemType.Weapon)
-        //{
-        //    InventoryManager.instance.AddItem(PlayerStats.instance.equipedWeapon);
-        //    PlayerStats.instance.EquipWeapon(this);
-        //}
-        //else if (itemType == ItemType.Armor)
-        //{
-        //    InventoryManager.instance.AddItem(PlayerStats.instance.equipedArmor);
-        //    PlayerStats.instance.EquipArmor(this);
-        //}
+        else if (itemType == ItemType.Weapon)
+        {
+            if (affectType == AffectType.Damage)
+            {
+                PlayerAttack.instance.AddDamage(amountOfAffect);
+            }
+        }
+        else if (itemType == ItemType.Armor)
+        {
+            if (affectType == AffectType.Health)
+            {
+                PlayerStats.instance.AddMaxHP(amountOfAffect);
+            }
+        }
     }
-
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -52,7 +55,6 @@ public class ItemManager : MonoBehaviour
         {
             InventoryManager.instance.AddItem(this);
             SelfDestroy();
-            Debug.Log("add thanh cong");
         }
     }
     public void SelfDestroy()

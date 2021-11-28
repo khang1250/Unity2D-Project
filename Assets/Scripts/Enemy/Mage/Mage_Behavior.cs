@@ -19,6 +19,7 @@ public class Mage_Behavior : Enemy
     public Transform firePoint;
     public float fireRate;
     public float shootRange;
+    public AudioSource source;
     #endregion
 
     #region private Variables
@@ -99,6 +100,7 @@ public class Mage_Behavior : Enemy
         attackMode = true; //To check if Enemy can still attack or not
         anim.SetBool("Attack", true);
         Instantiate(fireBall, firePoint.position, firePoint.rotation);
+        source.Play();
 
     }
 
@@ -118,6 +120,8 @@ public class Mage_Behavior : Enemy
         cooling = false;
         attackMode = false;
         anim.SetBool("Attack", false);
+        source.Stop();
+
     }
 
     public void TriggerCooling()

@@ -29,5 +29,11 @@ public class PlayerAttack : MonoBehaviour
             collision.GetComponent<Boss>().TakeDamage(attackDamage);
         }
     }
+
+    public void AddDamage(int amountDamToAdd)
+    {
+        attackDamage += amountDamToAdd;
+
+    }
 }
  

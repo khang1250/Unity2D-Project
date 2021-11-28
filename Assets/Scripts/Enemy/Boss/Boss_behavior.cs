@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss_behavior : Enemy
 {
@@ -15,6 +16,8 @@ public class Boss_behavior : Enemy
     [HideInInspector] public bool inRange; //check if Player is in range or not
     public GameObject detectZone;
     public GameObject triggerArea;
+    public string VictoryScene;
+
 
     #endregion
 
@@ -202,13 +205,13 @@ public class Boss_behavior : Enemy
         GetComponent<Boss_behavior>().enabled = false;
         GetComponentInChildren<BossDetZone>().enabled = false;
         rb.gravityScale = 0;
-        ExperienceController.instance.IncreaseExp(500);
+
     }
 
     public void BuffSequence()
     {
         
-        if (health <= 100)
+        if (health <= 500)
         {
             enrage = true;
             anim.SetTrigger("Trans");
@@ -227,7 +230,10 @@ public class Boss_behavior : Enemy
 
         if (health <= 0)
         {
+            SceneManager.LoadScene(VictoryScene);
+
             DeathSequence();
+
         }
     }
 }

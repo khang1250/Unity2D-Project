@@ -8,6 +8,10 @@ public class PlayerAttackControls : MonoBehaviour
 
     public bool attackStarted = false;
     public BoxCollider2D boxCol;
+
+    public AudioSource source;
+
+
     void Start()
     {
         pMC = GetComponent<PlayerMoveControls>();
@@ -34,6 +38,8 @@ public class PlayerAttackControls : MonoBehaviour
             //start animatio, set "attackStarted" to TRUE
             anim.SetBool("Attack", true);
             attackStarted = true;
+            source.Play();
+
         }
     }
 

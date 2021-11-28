@@ -68,6 +68,12 @@ public class MenuManager : MonoBehaviour
         hpText.text = playerStats.health.ToString() + "/" + playerStats.maxHealth;
     }
 
+    public void CloseMenu()
+    {
+        menu.SetActive(false);
+
+    }
+
     public void QuitGame()
     {
         Application.Quit();
@@ -92,7 +98,6 @@ public class MenuManager : MonoBehaviour
             if (item.amount > 1)
             {
                 itemsAmountText.text = item.amount.ToString();
-                Debug.Log(itemsAmountText.text = item.amount.ToString());
             }
             else
                 itemsAmountText.text = " ";

@@ -5,47 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Nextevel : MonoBehaviour
 {
-    //public int lvlToLoad;
-    //public Animator anim;
-    //public Fader fader;
-
-
-
-    //private void Start()
-    //{
-    //    lvlToLoad = SceneManager.GetActiveScene().buildIndex + 1;
-
-
-    //}
-
-    //private void RestartLevel()
-    //{
-    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
-    //}
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag("Player"))
-    //    {
-    //        PlayerStats playerStats = collision.GetComponentInChildren<PlayerStats>();
-    //        PlayerPrefs.SetInt("HealthKey", playerStats.health);
-    //        PlayerPrefs.SetInt("MaxHealthKey", playerStats.maxHealth);
-
-    //        ExperienceController expControl = collision.GetComponentInChildren<ExperienceController>();
-    //        PlayerPrefs.SetInt("ExpKey", expControl.currentExp);
-    //        PlayerPrefs.SetInt("MaxExpKey", expControl.totalExp);
-
-    //        PlayerCollectibles collectibles = collision.GetComponent<PlayerCollectibles>();
-    //        PlayerPrefs.SetInt("SoulNumber", collectibles.soulNumber);
-
-    //        //fader.SetLevel(lvlToLoad);
-    //        //SceneManager.LoadScene(lvlToLoad);
-    //        //GameManager.ManagerLoadLevel(lvlToLoad);   
-
-    //    }
-    //}
-
     private int nextSceneToLoad;
     public Animator anim;
 
@@ -63,8 +22,9 @@ public class Nextevel : MonoBehaviour
         ExperienceController expControl = collision.GetComponentInChildren<ExperienceController>();
         PlayerPrefs.SetInt("ExpKey", expControl.currentExp);
         PlayerPrefs.SetInt("MaxExpKey", expControl.totalExp);
+        PlayerPrefs.SetInt("Level", expControl.level);
 
-        PlayerCollectibles collectibles = collision.GetComponent<PlayerCollectibles>();
+        PlayerCollectibles collectibles = collision.GetComponentInChildren<PlayerCollectibles>();
         PlayerPrefs.SetInt("SoulNumber", collectibles.soulNumber);
 
         SceneManager.LoadScene(nextSceneToLoad);

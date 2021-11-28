@@ -15,8 +15,10 @@ public class Enemy_Behavior : Enemy
     [HideInInspector] public bool inRange; //check if Player is in range or not
     public GameObject detectZone;
     public GameObject triggerArea;
-    
-    #endregion 
+    public AudioSource source;
+
+
+    #endregion
 
     #region private Variables
     private float distance; //store distance b/w enemy & player
@@ -87,6 +89,8 @@ public class Enemy_Behavior : Enemy
 
         anim.SetBool("canMove", false);
         anim.SetBool("Attack", true);
+        source.Play();
+
     }
 
     void Cooldown()
@@ -105,6 +109,7 @@ public class Enemy_Behavior : Enemy
         cooling = false;
         attackMode = false;
         anim.SetBool("Attack", false);
+        source.Stop();
     }
 
     public void TriggerCooling()

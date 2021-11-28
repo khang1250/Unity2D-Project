@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8954908473238107547
 Transform:
   m_ObjectHideFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8954908473238107551}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.0106049, y: -1.6854795, z: 0.44149497}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -127,8 +127,8 @@ MonoBehaviour:
   itemDescription: Steel Sword
   valueInSoul: 3
   itemImage: {fileID: 21300000, guid: 02be70e0edc79ef4db90d1426b7971a9, type: 3}
-  amountOfAffect: 0
-  affectType: 0
+  amountOfAffect: 20
+  affectType: 1
   weaponStrenght: 20
   armorVitality: 0
   isStackable: 0

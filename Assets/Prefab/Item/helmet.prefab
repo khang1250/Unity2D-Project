@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8456879148107489609
 Transform:
   m_ObjectHideFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8456879148107489621}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.4065285, y: -2.2233315, z: 0.44149497}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -127,8 +127,8 @@ MonoBehaviour:
   itemDescription: Steel Helmet
   valueInSoul: 2
   itemImage: {fileID: 21300000, guid: bc4456283aa8e0a4099a2ac0c8d293dd, type: 3}
-  amountOfAffect: 0
-  affectType: 0
+  amountOfAffect: 10
+  affectType: 2
   weaponStrenght: 0
   armorVitality: 20
   isStackable: 0

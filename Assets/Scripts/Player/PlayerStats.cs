@@ -78,7 +78,7 @@ public class PlayerStats : MonoBehaviour
                 GetComponentInParent<GatherInput>().DisableControls();
                 StartCoroutine(Shine());
 
-                PlayerPrefs.SetFloat("HealthKey", maxHealth);
+                PlayerPrefs.SetInt("HealthKey", maxHealth);
                 GameManager.ManagerRestartLevel();
 
             }
@@ -116,6 +116,7 @@ public class PlayerStats : MonoBehaviour
     {
         //PlayerPrefs.SetFloat("HealthKey", health);
     }
+    
 
     public void AddHP(int amountHpToAdd)
     {
@@ -124,19 +125,12 @@ public class PlayerStats : MonoBehaviour
         {
             health = maxHealth;
         }
+        MenuManager.instance.healthSlider.value = health;
     }
+    public void AddMaxHP(int amountMaxHpToAdd)
+    {
+        maxHealth += amountMaxHpToAdd;
+        MenuManager.instance.healthSlider.value = health;
 
-    //public void EquipWeapon(ItemManager weaponToEquip)
-    //{
-    //    equipedWeapon = weaponToEquip;
-    //    weaponPower = equipedWeapon.weaponStrenght;
-
-    //}
-
-    //public void EquipArmor(ItemManager armorToEquip)
-    //{
-    //    equipedArmor = armorToEquip;
-    //    armorVitality = equipedWeapon.armorVitality;
-
-    //}
+    }
 }

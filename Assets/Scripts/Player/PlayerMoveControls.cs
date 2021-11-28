@@ -37,23 +37,10 @@ public class PlayerMoveControls : MonoBehaviour
     bool isSliding = false;
 
 
-    //public Transform ledgeCheck;
-    //private bool isTouchingLedge;
-    //private bool canClimbLedge = false;
-    //private bool ledgeDetected;
 
-    private float startGravity;
+   private float startGravity;
 
-    //[Header("Dash Variables")]
-    //[SerializeField] private float dashSpeed = 15f;
-    //[SerializeField] private float dashLength = .3f;
-    //[SerializeField] private float dashBufferLength = .1f;
-    //private float dashBufferCounter;
-    //private bool isDashing;
-    //private bool hasDashed;
-    //private bool canDashed => dashBufferCounter > 0f && !hasDashed;
-    //private float _horizontalDirection;
-    //private float _verticalDirection;
+    
 
 
     private void Awake()
@@ -103,6 +90,7 @@ public class PlayerMoveControls : MonoBehaviour
             if (rb.velocity.y == 0)
             {
                 anim.enabled = false;
+
             }
             else
             {
@@ -110,7 +98,7 @@ public class PlayerMoveControls : MonoBehaviour
             }
                     
       }
-      
+
     }
     public void ExitLadder()
     {
@@ -136,6 +124,7 @@ public class PlayerMoveControls : MonoBehaviour
             }
         }
         gI.jumpInput = false;
+
     }
     private void CheckStatus()
     {
@@ -197,46 +186,6 @@ public class PlayerMoveControls : MonoBehaviour
        
     }
 
-    //IEnumerator Slide()
-    //{
-    //    isSliding = true;
-    //    speed *= slidePower;
 
-    //    yield return new WaitForSeconds(slideTime);
-
-    //    speed = baseSpeed;
-    //    isSliding = false;
-    //}
-
-    //private void HandleRoll()
-    //{
-    //    anim.SetBool("isRolling", canRoll);
-
-    //    if (facingRight)
-    //    {
-    //        direction = 2;
-    //    }
-    //    if (!facingRight)
-    //    {
-    //        direction = 1;
-    //    }
-
-    //    if (direction == 1 && Input.GetKeyDown(KeyCode.Mouse1) && isGrounded)
-    //    {
-    //        if (canImpulse && !canRoll)
-    //        {
-    //            canRoll = true;
-    //            rb.AddForce(Vector2.left * rollImpulse);
-    //        }
-    //    }
-    //    else if (direction == 2 && Input.GetKeyDown(KeyCode.Mouse1) && isGrounded)
-    //    {
-    //        if (canImpulse && !canRoll)
-    //        {
-    //            canRoll = true;
-    //            rb.AddForce(Vector2.right * rollImpulse);
-    //        }
-    //    }
-    //}
 
 }
