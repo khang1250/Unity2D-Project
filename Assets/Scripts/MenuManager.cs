@@ -7,6 +7,8 @@ using TMPro;
 public class MenuManager : MonoBehaviour
 {
     public GameObject menu;
+
+
     private GatherInput gI;
 
     public Slider healthSlider;
@@ -56,6 +58,8 @@ public class MenuManager : MonoBehaviour
                 menu.SetActive(true);
             }
         }
+
+        
     }
 
     public void UpdateStats()

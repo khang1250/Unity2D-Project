@@ -8,6 +8,9 @@ public class GatherInput : MonoBehaviour
 {
     private Controls myControls;
 
+    public GameObject pausePanel;
+
+
     public float valueX;
     public bool jumpInput;
 
@@ -187,11 +190,14 @@ public class GatherInput : MonoBehaviour
         {
             Time.timeScale = 0;
             myControls.Player.Disable();
+            pausePanel.SetActive(true);
         }
         else
         {
             Time.timeScale = 1;
             myControls.Player.Enable();
+            pausePanel.SetActive(false);
+
         }
     }
     #endregion
