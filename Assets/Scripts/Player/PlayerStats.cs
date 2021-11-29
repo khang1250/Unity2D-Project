@@ -74,12 +74,12 @@ public class PlayerStats : MonoBehaviour
                 StartCoroutine(Shine());
 
                 PlayerPrefs.SetInt("Health", maxHealth);
-                GameManager.ManagerRestartLevel();
+
 
             }
-                
-            StartCoroutine(DamagePrevention());
-        }  
+      
+        }
+        
     }   
 
     IEnumerator Shine()
@@ -90,6 +90,7 @@ public class PlayerStats : MonoBehaviour
         
     }
     private IEnumerator DamagePrevention()
+
     {
         canTakeDamage = false;
         yield return new WaitForSeconds(0.15f);
@@ -97,10 +98,14 @@ public class PlayerStats : MonoBehaviour
         {
             canTakeDamage = true;
             anim.SetBool("Damage", false);
+            
         }
+        
         else
         {
+            GameManager.ManagerRestartLevel();
             anim.SetBool("Death", true);
+            
         }
 
     }

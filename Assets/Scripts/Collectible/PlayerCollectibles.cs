@@ -23,7 +23,7 @@ public class PlayerCollectibles : MonoBehaviour
 
     public void soulCollected()
     {
-        soulNumber += 200;
+        soulNumber += 30;
         UpdateText();
     }
    

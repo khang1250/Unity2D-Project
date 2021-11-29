@@ -200,10 +200,11 @@ public class Boss_behavior : Enemy
     {
 
         anim.SetTrigger("Death");
-        GetComponent<CapsuleCollider2D>().enabled = false;
+        GetComponentInChildren<CapsuleCollider2D>().enabled = false;
         GetComponentInChildren<BoxCollider2D>().enabled = false;
-        GetComponent<Boss_behavior>().enabled = false;
+        GetComponentInChildren<Boss_behavior>().enabled = false;
         GetComponentInChildren<BossDetZone>().enabled = false;
+        GetComponentInChildren<BossTriggerArea>().enabled = false;
         rb.gravityScale = 0;
 
     }
@@ -211,7 +212,7 @@ public class Boss_behavior : Enemy
     public void BuffSequence()
     {
         
-        if (health <= 500)
+        if (health <= 2500)
         {
             enrage = true;
             anim.SetTrigger("Trans");

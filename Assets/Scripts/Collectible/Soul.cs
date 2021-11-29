@@ -15,7 +15,6 @@ public class Soul : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<PlayerCollectibles>().soulCollected();
-            Debug.Log("Soul colected");
 
 
             GetComponent<AudioSource>().Play();
