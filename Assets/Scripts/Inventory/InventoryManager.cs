@@ -40,8 +40,6 @@ public class InventoryManager : MonoBehaviour
         {
             itemList.Add(item);
         }
-
-        Debug.Log("Stack Thanh Cong");
     }
 
     public void RemoveItem(ItemManager item)

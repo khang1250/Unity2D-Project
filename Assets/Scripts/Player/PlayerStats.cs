@@ -22,11 +22,6 @@ public class PlayerStats : MonoBehaviour
 
     public Image healthUI;
 
-    //public string equippedWeaponName;
-    //public string equippedArmorName;
-
-    //public int weaponPower;
-    //public int armorVitality;
 
     public ItemManager equipedWeapon, equipedArmor;
     
@@ -50,8 +45,8 @@ public class PlayerStats : MonoBehaviour
         pAC = GetComponentInParent<PlayerAttackControls>();
         anim = GetComponentInParent<Animator>();
         //health = maxHealth;
-        health = PlayerPrefs.GetInt("HealthKey", maxHealth);
-        maxHealth = PlayerPrefs.GetInt("MaxHealthKey", maxHealth);
+        health = PlayerPrefs.GetInt("Health", maxHealth);
+        maxHealth = PlayerPrefs.GetInt("MaxHealt", maxHealth);
         MenuManager.instance.healthSlider.maxValue = maxHealth;
         MenuManager.instance.healthSlider.value = health;
        
@@ -78,7 +73,7 @@ public class PlayerStats : MonoBehaviour
                 GetComponentInParent<GatherInput>().DisableControls();
                 StartCoroutine(Shine());
 
-                PlayerPrefs.SetInt("HealthKey", maxHealth);
+                PlayerPrefs.SetInt("Health", maxHealth);
                 GameManager.ManagerRestartLevel();
 
             }

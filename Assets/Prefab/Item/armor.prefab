@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4975440935166494800
 Transform:
   m_ObjectHideFlags: 0
@@ -124,8 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 2
   itemName: Plate
-  itemDescription: Steel Armor
-  valueInSoul: 2
+  itemDescription: + 20 max health
+  valueInSoul: 30
   itemImage: {fileID: 21300000, guid: 6672d67519011114085e7056d321732d, type: 3}
   amountOfAffect: 30
   affectType: 2

@@ -16,16 +16,19 @@ public class Nextevel : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerStats playerStats = collision.GetComponentInChildren<PlayerStats>();
-        PlayerPrefs.SetInt("HealthKey", playerStats.health);
-        PlayerPrefs.SetInt("MaxHealthKey", playerStats.maxHealth);
+        PlayerPrefs.SetInt("Health", playerStats.health);
+        PlayerPrefs.SetInt("MaxHealt", playerStats.maxHealth);
+
+        PlayerAttack playerAttack = collision.GetComponentInChildren<PlayerAttack>();
+        PlayerPrefs.SetInt("Attack", playerAttack.attackDamage);
 
         ExperienceController expControl = collision.GetComponentInChildren<ExperienceController>();
-        PlayerPrefs.SetInt("ExpKey", expControl.currentExp);
-        PlayerPrefs.SetInt("MaxExpKey", expControl.totalExp);
-        PlayerPrefs.SetInt("Level", expControl.level);
+        PlayerPrefs.SetInt("Exp", expControl.currentExp);
+        PlayerPrefs.SetInt("MaxExp", expControl.totalExp);
+        PlayerPrefs.SetInt("Lvl", expControl.level);
 
         PlayerCollectibles collectibles = collision.GetComponentInChildren<PlayerCollectibles>();
-        PlayerPrefs.SetInt("SoulNumber", collectibles.soulNumber);
+        PlayerPrefs.SetInt("Soul", collectibles.soulNumber);
 
         SceneManager.LoadScene(nextSceneToLoad);
         anim.SetTrigger("FadeIN");

@@ -168,7 +168,7 @@ public class Enemy_Behavior : Enemy
         GetComponent<Enemy_Behavior>().enabled = false;
         GetComponentInChildren<Det_ZoneCheck>().enabled = false;
         rb.gravityScale = 0;
-        ExperienceController.instance.IncreaseExp(500);
+        ExperienceController.instance.IncreaseExp(20);
     }
 
     public override void TakeDamage(float damage)

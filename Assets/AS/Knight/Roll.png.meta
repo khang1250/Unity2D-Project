@@ -106,12 +106,12 @@ TextureImporter:
       name: Roll_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 51
-        width: 128
-        height: 77
-      alignment: 9
-      pivot: {x: 0.4988242, y: 0.068046324}
+        x: 56
+        y: 64
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -127,12 +127,12 @@ TextureImporter:
       name: Roll_1
       rect:
         serializedVersion: 2
-        x: 128
-        y: 51
-        width: 128
-        height: 77
-      alignment: 9
-      pivot: {x: 0.5094062, y: 0.12472802}
+        x: 179
+        y: 64
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -148,10 +148,10 @@ TextureImporter:
       name: Roll_2
       rect:
         serializedVersion: 2
-        x: 0
+        x: 48
         y: 0
-        width: 128
-        height: 64
+        width: 26
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,10 +169,10 @@ TextureImporter:
       name: Roll_3
       rect:
         serializedVersion: 2
-        x: 128
+        x: 182
         y: 0
-        width: 128
-        height: 64
+        width: 23
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

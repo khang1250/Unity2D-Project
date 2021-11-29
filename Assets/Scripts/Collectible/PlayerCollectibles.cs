@@ -12,7 +12,7 @@ public class PlayerCollectibles : MonoBehaviour
     void Start()
     {
         instance = this;
-        soulNumber = PlayerPrefs.GetInt("SoulNumber", 0);   
+        soulNumber = PlayerPrefs.GetInt("Soul", 0);   
         UpdateText();     
     }
 
@@ -23,7 +23,7 @@ public class PlayerCollectibles : MonoBehaviour
 
     public void soulCollected()
     {
-        soulNumber += 1;
+        soulNumber += 200;
         UpdateText();
     }
    

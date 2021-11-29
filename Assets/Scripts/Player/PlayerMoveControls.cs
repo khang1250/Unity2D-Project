@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 
 public class PlayerMoveControls : MonoBehaviour
@@ -32,15 +34,24 @@ public class PlayerMoveControls : MonoBehaviour
     public float climbSpeed;
     public float climbHorizontalSpeed;
 
-    public float slidePower;
-    public float slideTime;
-    bool isSliding = false;
+    public float baseSpeed;
+    public float rollPower;
+    public float rollTime;
+    bool isRolling = false;
+    public float distanceBetweenImages;
+    public float rollCoolDown;
+    private float lastImageXpos;
+    private float lastRoll = -100;
+    private float rollTimeLeft;
 
 
 
-   private float startGravity;
+    private float startGravity;
+    public string levelToReload;
 
-    
+
+
+
 
 
     private void Awake()
@@ -50,31 +61,41 @@ public class PlayerMoveControls : MonoBehaviour
 
     void Start()    
     {
-      //speed = baseSpeed;
-      gI = GetComponent<GatherInput>();
-      rb = GetComponent<Rigidbody2D>();
-      anim = GetComponent<Animator>();
-      startGravity = rb.gravityScale;
 
-      resetJumpNumber = additionalJump;
+        speed = baseSpeed;
+        gI = GetComponent<GatherInput>();
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        startGravity = rb.gravityScale;
+
+        resetJumpNumber = additionalJump;
 
     }
 
     void Update()
     {     
         SetAnimatorValues();
-      
+        CheckRoll();
+
+        if (/*Input.GetKeyDown(KeyCode.Z)*/gI.slideInput)
+        {
+            if(Time.time >= (lastRoll + rollCoolDown))
+            {
+                if (!isRolling && !onLadders )
+                {
+                    StartCoroutine(Roll());
+                }
+            }   
+        }
     }
 
     private void FixedUpdate()
-    {
-      
-            CheckStatus();
-            if (knockBack)
-                return;
-            Move();
-            JumpPlayer();
-        
+    { 
+        CheckStatus();
+        if (knockBack)
+        return;
+        Move();
+        JumpPlayer();
     }
  
 
@@ -186,6 +207,56 @@ public class PlayerMoveControls : MonoBehaviour
        
     }
 
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(levelToReload);
+        Time.timeScale = 1;
+
+    }
+
+    IEnumerator Roll()
+    {   
+        isRolling = true;
+        rollTimeLeft = rollTime;
+        lastRoll =Time.time;
+        AfterImagePool.Instance.GetFromPool();
+        lastImageXpos = transform.position.x;
+        GetComponentInChildren<Rigidbody2D>().gravityScale = 0;
+        GetComponentInChildren<CapsuleCollider2D>().enabled = false;
+        GetComponentInChildren<PolygonCollider2D>().enabled = false;
+        GetComponentInChildren<BoxCollider2D>().enabled = false;
 
 
+        speed *= rollPower;
+
+        yield return new WaitForSeconds(rollTime);
+
+        speed = baseSpeed;
+
+        isRolling = false;
+
+        GetComponentInChildren<Rigidbody2D>().gravityScale = 6;
+        GetComponentInChildren<CapsuleCollider2D>().enabled = true;
+        GetComponentInChildren<PolygonCollider2D>().enabled = true;
+        GetComponentInChildren<BoxCollider2D>().enabled = true;
+
+    }
+
+    private void CheckRoll()
+    {
+        if (isRolling)
+        {
+            if(rollTimeLeft > 0)
+            {
+                rb.velocity = new Vector2(rollPower * gI.valueX, rb.velocity.y);
+                rollTimeLeft -= Time.deltaTime;
+
+                if(Mathf.Abs(transform.position.x - lastImageXpos) > distanceBetweenImages)
+                {
+                    AfterImagePool.Instance.GetFromPool();
+                    lastImageXpos = transform.position.x;
+                }
+            }
+        }
+    }
 }

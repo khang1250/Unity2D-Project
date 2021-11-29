@@ -59,7 +59,6 @@ public class GameManager : MonoBehaviour
     {
         if (GM == null)
             return;
-        //GM.fader.SetLevel(index);
         GM.fader.SetLevel(index);
         
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public float attackDamage;
+    public int attackDamage;
     public int enemyLayer;
     public int bossLayer;
 
@@ -19,6 +19,8 @@ public class PlayerAttack : MonoBehaviour
     {
         enemyLayer = LayerMask.NameToLayer("Enemy");
         bossLayer = LayerMask.NameToLayer("Enemy");
+        attackDamage = PlayerPrefs.GetInt("Attack", attackDamage);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

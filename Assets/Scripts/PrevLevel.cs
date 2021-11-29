@@ -17,15 +17,20 @@ public class PrevLevel : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerStats playerStats = collision.GetComponentInChildren<PlayerStats>();
-        PlayerPrefs.SetInt("HealthKey", playerStats.health);
-        PlayerPrefs.SetInt("MaxHealthKey", playerStats.maxHealth);
+        PlayerPrefs.SetInt("Health", playerStats.health);
+        PlayerPrefs.SetInt("MaxHeal", playerStats.maxHealth);
+
+        PlayerAttack playerAttack = collision.GetComponentInChildren<PlayerAttack>();
+        PlayerPrefs.SetInt("Attack", playerAttack.attackDamage);
 
         ExperienceController expControl = collision.GetComponentInChildren<ExperienceController>();
         PlayerPrefs.SetInt("ExpKey", expControl.currentExp);
-        PlayerPrefs.SetInt("MaxExpKey", expControl.totalExp);
+        PlayerPrefs.SetInt("MaxExp", expControl.totalExp);
+        PlayerPrefs.SetInt("Lvl", expControl.level);
+
 
         PlayerCollectibles collectibles = collision.GetComponent<PlayerCollectibles>();
-        PlayerPrefs.SetInt("SoulNumber", collectibles.soulNumber);
+        PlayerPrefs.SetInt("Soul", collectibles.soulNumber);
 
         SceneManager.LoadScene(prevSceneToLoad);
         anim.SetTrigger("FadeIN");

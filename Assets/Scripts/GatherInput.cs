@@ -27,6 +27,8 @@ public class GatherInput : MonoBehaviour
 
     public bool LvlUpInput;
 
+    public bool interactInput;
+
     public static GatherInput instance;
 
     private void Awake()
@@ -55,6 +57,9 @@ public class GatherInput : MonoBehaviour
             myControls.Player.LvlUP.performed += LevelUpStart;
             myControls.Player.LvlUP.canceled += LevelUpStop;
 
+            myControls.Player.Interact.performed += InteractStart;
+            myControls.Player.Interact.canceled += InteractStart;
+
             myControls.Ui.Pause.performed += PauseGame;
             myControls.Ui.Menu.performed += OpenMenu;
 
@@ -82,6 +87,9 @@ public class GatherInput : MonoBehaviour
 
         myControls.Player.LvlUP.performed -= LevelUpStart;
         myControls.Player.LvlUP.canceled -= LevelUpStop;
+
+        myControls.Player.Interact.performed -= InteractStart;
+        myControls.Player.Interact.canceled -= InteractStart;
 
         myControls.Ui.Pause.performed -= PauseGame;
         myControls.Ui.Menu.performed -= CloseMenu;
@@ -211,6 +219,18 @@ public class GatherInput : MonoBehaviour
     private void LevelUpStop(InputAction.CallbackContext ctx)
     {
         LvlUpInput = false;
+    }
+    #endregion
+
+    #region Interact
+    private void InteractStart(InputAction.CallbackContext ctx)
+    {
+        interactInput = true;
+    }
+
+    private void InteractStop(InputAction.CallbackContext ctx)
+    {
+        interactInput = false;
     }
     #endregion
 

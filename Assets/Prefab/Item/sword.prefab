@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8954908473238107547
 Transform:
   m_ObjectHideFlags: 0
@@ -124,8 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   itemName: Sword
-  itemDescription: Steel Sword
-  valueInSoul: 3
+  itemDescription: + 20 damage
+  valueInSoul: 20
   itemImage: {fileID: 21300000, guid: 02be70e0edc79ef4db90d1426b7971a9, type: 3}
   amountOfAffect: 20
   affectType: 1

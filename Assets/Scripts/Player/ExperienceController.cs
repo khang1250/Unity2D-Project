@@ -30,8 +30,8 @@ public class ExperienceController : MonoBehaviour
         gI = GetComponent<GatherInput>();
         UpdateExpUI();
         StartCoroutine(FrequentUpdateExp());
-        currentExp = PlayerPrefs.GetInt("ExpKey", totalExp);
-        totalExp = PlayerPrefs.GetInt("MaxExpKey", totalExp);
+        currentExp = PlayerPrefs.GetInt("Exp", totalExp);
+        totalExp = PlayerPrefs.GetInt("MaxExp", totalExp);
     }
 
     // Update is called once per frame

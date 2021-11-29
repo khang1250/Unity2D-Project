@@ -124,8 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 0
   itemName: Health Potion
-  itemDescription: Heal
-  valueInSoul: 1
+  itemDescription: Heal 20 of lost Hp
+  valueInSoul: 10
   itemImage: {fileID: 21300000, guid: 2e2bc4c70f04fb14da4bd9d403bc493f, type: 3}
   amountOfAffect: 20
   affectType: 0

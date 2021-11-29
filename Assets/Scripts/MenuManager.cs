@@ -7,6 +7,8 @@ using TMPro;
 public class MenuManager : MonoBehaviour
 {
     public GameObject menu;
+    public GameObject restartPanel;
+
 
 
     private GatherInput gI;
@@ -41,7 +43,6 @@ public class MenuManager : MonoBehaviour
         gI = GetComponent<GatherInput>();
     }
 
-    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
@@ -50,16 +51,20 @@ public class MenuManager : MonoBehaviour
             {
                 menu.SetActive(false);
                 UpdateStats();
-
+                Time.timeScale = 1;
             }
             else
             {
-                
                 menu.SetActive(true);
+                Time.timeScale = 0;
             }
         }
 
-        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            restartPanel.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     public void UpdateStats()
@@ -75,6 +80,7 @@ public class MenuManager : MonoBehaviour
     public void CloseMenu()
     {
         menu.SetActive(false);
+        Time.timeScale = 1;
 
     }
 
@@ -120,5 +126,11 @@ public class MenuManager : MonoBehaviour
     {
         activeItem.UseItem();
         DiscardItem();
+    }
+
+    public void CloseRestartPanel()
+    {
+        restartPanel.SetActive(false);
+        Time.timeScale = 1;
     }
 }

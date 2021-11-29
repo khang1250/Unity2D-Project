@@ -19,7 +19,7 @@ public class ShopKeeper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(canOpenShop && Input.GetKeyDown("a") 
+        if(canOpenShop && Input.GetKeyDown("a")
             && !ShopManager.instance.shopMenu.activeInHierarchy)
         {
             ShopManager.instance.itemForSale = shopItemsForSale;

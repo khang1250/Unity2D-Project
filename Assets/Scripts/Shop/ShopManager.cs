@@ -131,7 +131,6 @@ public class ShopManager : MonoBehaviour
 
             OpenSellPanel();
         }    
-
     }
 
 }
