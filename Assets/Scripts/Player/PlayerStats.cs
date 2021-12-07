@@ -79,6 +79,8 @@ public class PlayerStats : MonoBehaviour
             }
       
         }
+
+        StartCoroutine(DamagePrevention());
         
     }   
 

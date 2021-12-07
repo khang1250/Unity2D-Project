@@ -164,14 +164,13 @@ public class Enemy_Behavior : Enemy
         
         anim.SetTrigger("Death");
         rb.gravityScale = 0;
-
         GetComponentInChildren<CapsuleCollider2D>().enabled = false;
         GetComponentInChildren<BoxCollider2D>().enabled = false;
         GetComponentInChildren<Enemy_Behavior>().enabled = false;
         GetComponentInChildren<Det_ZoneCheck>().enabled = false;
         GetComponentInChildren<TriggerAreaCheck>().enabled = false;
         rb.gravityScale = 0;
-        ExperienceController.instance.IncreaseExp(0);
+        ExperienceController.instance.IncreaseExp(50);
     }
 
     public override void TakeDamage(float damage)
